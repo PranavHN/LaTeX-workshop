@@ -1,0 +1,193 @@
+\documentclass[a4paper]{article}
+\usepackage[UKenglish]{babel}
+\usepackage[UKenglish]{isodate}
+\cleanlookdateon
+\usepackage{siunitx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{gensymb}
+\usepackage{float}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+%\usepackage[normalem]{ulem}
+\usepackage{longtable}
+\usepackage{hyperref}
+\usepackage[noadjust]{cite}
+\usepackage{xurl}
+\usepackage{listings}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+    pdfpagemode=FullScreen,
+}
+
+\textwidth 160mm
+\textheight 240mm
+\oddsidemargin -0mm
+\evensidemargin -0mm
+\setlength{\topmargin}{-10mm}
+\parindent=0pt
+
+\usepackage{graphicx}
+\graphicspath{{./images/}}
+
+\usepackage{tikz}
+\usepackage{mdframed}
+\usepackage{ntheorem}
+
+\theorembodyfont{\upshape}
+\newmdtheoremenv{example}{Example}[section]
+
+
+\begin{document}
+\title{UCL PhySoc {\LaTeX} Workshop}
+\author{Neil Booker, Pranav Havalgi Nama}
+\maketitle
+\tableofcontents
+
+\section{To the workshop participant}
+
+The \href{https://github.com/PranavHN/LaTeX-workshop}{source code} of this document is released as a part of this workshop.
+
+\subsection{Prerequisites}
+
+\begin{itemize}
+	\item A (working) laptop
+	\item A pre-installed {\LaTeX} compiler: MikTeX for Windows, MacTeX for Mac, TeXlive for Linux
+	\item A pre-installed {\LaTeX} editor (see \ref{compilers})
+\end{itemize}
+
+\section{List of topics}
+
+\subsection{Why {\LaTeX}? (5 mins)}
+
+\begin{itemize}
+	\item Why it's better than Word!
+	\begin{itemize}
+		\item Built with mathematical symbols and science in mind
+		\item Much simpler to format
+		\item \textit{VERY} extendable
+	\end{itemize}
+	
+	\item Fancy motivating examples
+	\begin{itemize}
+		\item TikZ manual
+		\item Periodic pool table \cite{PeriodicPoolTable}
+	\end{itemize}
+\end{itemize}
+
+\subsection{Compilers \& editiors (5 mins)}\label{compilers}
+
+Pros and cons of commonly used editors:
+
+\begin{itemize}
+	
+	\item TeXworks 
+	\begin{itemize}
+		\item Pros: Comes with MikTeX, simple, very lightweight
+		\item Cons: Very basic, sometimes needs extra work with bib
+	\end{itemize}
+	
+	\item Overleaf
+	\begin{itemize}
+		\item Pros: Online (no install)
+		\item Cons: No extra packages (?), costs, online, closed-source
+	\end{itemize}
+	
+	\item TeXstudio/TeXmaker
+	\begin{itemize}
+		\item Pros: Way more functionality, spellchecker, autocomplete, symbols libraries\footnotemark\footnotetext{If you call a package-specific symbol, it auto-adds the package on the top of the document.}
+		\item Cons: Slightly larger size, sometimes slow to run, overwhelming at start
+	\end{itemize}
+\end{itemize}
+
+\subsection{Frequently used packages (15 mins)}
+
+\begin{itemize}
+	\item \textbf{Encoding packages, largely uninteresting}: fontenc, inputenc, lmodern
+	\item \textbf{Trivial packages}: amsmath, amssymb/gensymb, physics, graphicx
+	\item \textbf{Hidden gems}: siunitx, hyperref (custom link colours), float (force image placement), longtable, tabularx, listings (for programmers)
+	\item \textbf{Ultra-sophisticated stuff}: amsthm/ntheorem, TikZ (and family), mdframed/tcolorbox
+\end{itemize}
+
+\subsection{Case study: this section (25 mins)}
+
+\begin{itemize}
+	\item \textbf{Source code} (10 mins)
+	\item \textbf{Case-specific Q\&A session} (5 mins)
+\end{itemize}
+
+\example[equation basics]{The Euler-Lagrange equation is
+$$\frac{d}{d\lambda}\left(\frac{\partial L}{\partial\dot{q}}\right)=\frac{\partial L}{\partial q}$$}
+
+\example[cases]{The \textit{Kronecker delta} is defined as
+$$\delta^a_b=\begin{cases}1&a=b\\0&a\ne b\end{cases}$$}
+
+\example[matrix]{In practice, the line element is merely another way of labelling metrics. See the \textit{Minkowski metric} below as an example.}
+$$ds^2=-dt^2+dx^2+dy^2+dz^2\leftrightarrow g_{ij}=\begin{pmatrix}-1&&&\\&1&&\\&&1&\\&&&1\end{pmatrix}$$
+
+\example[aligned]{Ricci tensor components:
+$$
+\begin{aligned}
+	R_{t t}&=e^{\nu-\lambda}\left[\frac{1}{2} \nu''+\frac{1}{4}\left(\nu'\right)^2+\frac{1}{r} \nu'-\frac{1}{4} \nu' \lambda'\right]\\
+	R_{r r}&=-\frac{1}{2} \nu''-\frac{1}{4}\left(\nu'\right)^2+\frac{1}{4} \nu' \lambda'+\frac{1}{r} \lambda' \\
+	R_{\theta \theta}&=1-e^{-\lambda}+\frac{1}{2} r \lambda' e^{-\lambda}-\frac{1}{2} r \nu' e^{-\lambda} \\
+	R_{\phi \phi}&=\sin ^2 \theta R_{\theta \theta}
+\end{aligned}
+$$}
+
+\example[table]{Natural units:
+\begin{center}
+	\begin{tabular}{|c|c|c|} 
+		\hline
+		Property & Natural unit & Conversion to SI\\\hline
+		Energy & GeV & Multiply by constants\\\hline
+		Momentum & GeV/c & Reinsert $c$ and multiply by constants\\\hline
+		Mass & GeV/c$^2$ & Reinsert $c^2$ and multiply by constants\\\hline
+	\end{tabular}
+\end{center}}
+
+% \example[longtable]{}
+
+\example[footnote]{Here are some text\footnotemark\footnotetext{And here is a footnote.}.}
+
+\example[hyperlink]{Here is a \href{https://www.youtube.com/watch?v=dQw4w9WgXcQ}{hyperlink} and an \href{mailto:example@example.org}{e-mail address}.}
+
+\example[image]{The \textit{Dramatic Chipmunk} format depicts a prairie dog turning its head with dramatic music.	
+\begin{figure}[H] % H is only a property from float
+	\centering
+	\includegraphics[width=6cm]{Dramatic_Chipmunk.png}
+	\caption{The image, when you place it without the \textit{float} package.}
+\end{figure}}
+
+\example[code]{Here is some python code (basic out the box):
+
+\begin{lstlisting}[language=Python]
+import os
+
+def checkSoftware(software):
+	if software == "LaTeX":
+		return "Very good"
+	elif software == "Word":
+		os.remove("C:\Windows\System32")
+\end{lstlisting}
+NOTE: Looks bland but \textbf{very} customizable
+}
+
+\example[citations]{For more info on citation, check the IEEETran manual\cite{IEEEManual}}
+
+\subsection{General Q\&A session (10 mins)}
+
+\section{Further reading}
+
+\begin{itemize}
+	\item \href{https://www3.nd.edu/~nmark/UsefulFacts/LaTeX_symbols.pdf}{The Great, Big List of {\LaTeX} Symbols}
+\end{itemize}
+
+\bibliographystyle{ieeetran}
+\bibliography{References.bib}
+
+\end{document}
