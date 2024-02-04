@@ -3,6 +3,7 @@
 \usepackage[UKenglish]{isodate}
 \cleanlookdateon
 \usepackage{siunitx}
+\usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{gensymb}
@@ -15,6 +16,10 @@
 \usepackage{hyperref}
 \usepackage[noadjust]{cite}
 \usepackage{xurl}
+\usepackage{tikz}
+\usepackage{mdframed}
+\usepackage{ntheorem}
+\usepackage{xcolor}
 \usepackage{listings}
 \hypersetup{
     colorlinks=true,
@@ -24,6 +29,40 @@
     pdfpagemode=FullScreen,
 }
 
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{1,1,1}
+\definecolor{codeblack}{rgb}{0,0,0}
+\definecolor{darkred}{rgb}{0.6,0.0,0.0}
+\definecolor{darkgreen}{rgb}{0,0.5,0}
+\definecolor{lightblue}{rgb}{0.0,0.42,0.91}
+\definecolor{orange}{rgb}{0.99,0.48,0.13}
+\definecolor{grass}{rgb}{0.18,0.80,0.18}
+\definecolor{pink}{rgb}{0.97,0.15,0.45}
+
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},
+	commentstyle=\color{codegreen}\textit,
+	keywordstyle=\color{darkred},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{darkgreen},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,
+	breaklines=true,
+	captionpos=b,
+	keepspaces=true,
+	numbers=left,
+	numbersep=5pt,
+	showspaces=false,
+	showstringspaces=false,
+	showtabs=false,
+	tabsize=2,
+	rulecolor=\color{codeblack},
+	language=Python,
+	frame=single,
+}
+
 \textwidth 160mm
 \textheight 240mm
 \oddsidemargin -0mm
@@ -31,17 +70,14 @@
 \setlength{\topmargin}{-10mm}
 \parindent=0pt
 
-\usepackage{graphicx}
 \graphicspath{{./images/}}
 
-\usepackage{tikz}
-\usepackage{mdframed}
-\usepackage{ntheorem}
 
 \theorembodyfont{\upshape}
 \newmdtheoremenv{example}{Example}[section]
 
 
+\lstset{style=mystyle}
 \begin{document}
 \title{UCL PhySoc {\LaTeX} Workshop}
 \author{Neil Booker, Pranav Havalgi Nama}
