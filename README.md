@@ -25,3 +25,4 @@ Recommend you do this before the workshop, as it can take a while to install LaT
 
 - Running LaTeX online:
   - [Overleaf](https://www.overleaf.com/) is the most popular online LaTeX editor (arguably most popular LaTeX editor in general). You will need to create an account to use it, but it is free to use.
+
